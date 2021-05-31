@@ -4,8 +4,11 @@ You must write an algorithm with O(log n) runtime complexity.
 '''
 class Solution:
     def searchInsert(self, nums, target):
-        for i in range(0,len(nums)):
-            if nums[i]==target:
-                return i
-                
+        if target in nums:
+            return nums.index(target)
+        elif target not in nums:
+            nums.append(target)
+            nums.sort()
+            return nums.index(target)
+        
         
